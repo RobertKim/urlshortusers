@@ -1,0 +1,31 @@
+<div class="container">
+<h1>Welcome to URL Shortener with Users!</h1>
+
+<p>Enter your URL:</p>
+<form action="/url" method="post">
+  <input name="url" type="text" value="http://">
+  <input type="submit" value="Submit"><br>
+</form>
+<br>
+<p>Login</p>
+<form action="/login" method="post">
+  <input name="email" type="text" placeholder="Email"><br>
+  <input name="password" type="text" placeholder="Password">
+  <input type="submit" value="Submit"><br>
+</form>
+<br>
+<p>Signup</p>
+<form action="/signup" method="post">
+  <input name="name" type="text" placeholder="Name"><br>
+  <input name="email" type="text" placeholder="Email"><br>
+  <input name="password" type="text" placeholder="Password">
+  <input type="submit" value="Submit"><br>
+</form>
+
+
+<h3> Public shortened urls: </h3>
+<p><% @short_urls.each do |short_url| %>
+  <%= short_url.url %><a href="<%= short_url.url %>"> <%= short_url.short_url %> </a> <br>
+  <% end %>
+</p>
+
