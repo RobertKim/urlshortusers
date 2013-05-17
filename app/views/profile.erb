@@ -1,0 +1,20 @@
+<div class="container">
+  
+  <h3><a href="/logout">Logout</a></h3>
+  <h1>Welcome, <%= current_user.name %>, to your URL Shortener Profile Page!</h1><br>
+
+  <p>Enter your URL:</p>
+  <form action="/url" method="post">
+    <input name="url" type="text" value="http://">
+    <input type="submit" value="Submit"><br>
+  </form><br><br>
+  
+  <p>
+  <h4>Here are your private short URLs, <%= current_user.name %>!</h4>
+  <% @short_urls.each do |short_url| %>
+  <%= short_url.url %> <a href='<%= short_url.url %>'>  <%= short_url.short_url %> </a><br>
+  <% end %>
+  </p>
+
+
+</div>
