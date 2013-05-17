@@ -1,6 +1,4 @@
 <div class="container">
-  <h3><a href="/">Home</a></h3>
-    
 
    <% if current_user %>
    <a href="/profile">Profile Page</a>
@@ -9,6 +7,12 @@
 
   <h2><p>Your shortened URL for <a href='<%= @url.url %>'><%= @url.url %></a> is:<br><br> <a href="<%= @url.url %>"><%= @url.short_url %></a>
   </p></h2>
+
+  <p>Enter your URL:</p>
+  <form action="/url" method="post">
+    <input name="url" type="text" value="http://www.">
+    <input type="submit" value="Submit"><br>
+  </form><br><br>
 </div>
 
 
