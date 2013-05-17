@@ -1,39 +1,52 @@
 <div class="container">
-<h1>Welcome to URL Shortener with Users!</h1>
+<div class="hero-unit">
+
+  <h1>Welcome to URL Shortener with Users!</h1>
 
 <p>Enter your URL:</p>
 <form action="/url" method="post">
-  <input name="url" type="text" value="http://">
-  <input type="submit" value="Submit"><br>
+  <input name="url" type="text" value="http://www.">
+  <input class="btn btn-primary btn-large" type="submit" value="Submit"><br>
 </form>
 <br>
 
+</div>
+
+<div class='row'>
+  <div class='span4'>
 <h2><p>Login:</p></h2>
 <form action="/login" method="post">
   <input name="email" type="text" placeholder="Email"><br>
-  <input name="password" type="text" placeholder="Password">
+  <input name="password" type="text" placeholder="Password"><br>
   <input type="submit" value="Submit"><br>
 </form>
 <br>
 </div>
 
-<div class="container">
-<p>Not a user yet?
+
+
+<div class="span4">
+<p>
 <h2>Signup!</h2>
 </p>
 <form action="/signup" method="post">
   <input name="name" type="text" placeholder="Name"><br>
   <input name="email" type="text" placeholder="Email"><br>
-  <input name="password" type="text" placeholder="Password">
+  <input name="password" type="text" placeholder="Password"><br>
   <input type="submit" value="Submit"><br>
 </form>
 </div>
 
-<div class="container">
+<div class="span4">
 <h2> Public shortened urls: </h2>
 <p><% @short_urls.each do |short_url| %>
   <%= short_url.url %><a href="<%= short_url.url %>"> <%= short_url.short_url %> </a> <br>
   <% end %>
 </p>
 </div>
+
+</div>
+
+</div>
+
 
